@@ -2,6 +2,9 @@ const { defineConfig } = require("@vue/cli-service");
 const path = require('path'); // Ensure path module is imported
 
 module.exports = defineConfig({
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/dist/'
+    : '/',
   lintOnSave: false,
   transpileDependencies: true,
   configureWebpack: {
